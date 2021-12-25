@@ -48,7 +48,7 @@ body{
 }
 
 .timeleft{
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     padding: 10px;
     font-family: 'Lora', serif;
     font-size: 9vw;
@@ -62,7 +62,7 @@ body{
 }
 
 .lableTL{
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     padding: 10px;
     font-family: 'Mea Culpa', cursive;
     font-size: 7.5vw;
