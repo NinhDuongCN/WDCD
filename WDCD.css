@@ -22,7 +22,7 @@ body{
     color: white; /*font's color*/
     text-shadow: blue 5px -4px 1em;
     margin: 0;
-    background-image: url('./WeddingCountdown/bgr.png');
+    background-image: url('./images/bgr.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -68,5 +68,5 @@ body{
     font-size: 7.5vw;
     font-style: italic;
     text-align: left;
-    width: 40%;
+    //width: 40%;
 }
