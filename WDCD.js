@@ -11,9 +11,9 @@ function Countdown()
     document.getElementById("ngay").innerText = dhm;
     dhm = Math.floor(secs / 3600);
     secs %= 3600;
-    document.getElementById("gio").innerText = dhm;
+    document.getElementById("gio").innerText = dhm < 10 ? ("0" + dhm) : dhm;
     dhm=Math.floor(secs / 60);
-    document.getElementById("phut").innerText = dhm;
+    document.getElementById("phut").innerText = dhm < 10 ? ("0" + dhm) : dhm;
     secs %= 60;
     document.getElementById("giay").innerText = secs < 10 ? ("0" + secs) : secs;
 }
