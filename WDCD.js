@@ -20,7 +20,14 @@ function Countdown()
 
 var audioCount = 11; //Chỉnh số lượng bài hát trong danh sách
 
+// function AutoPlayAudio()
+// {
+//     const au = document.getElementById("au");
+//     au.addEventListener('pause', PlayAudio());
+// }
+
 function PlayAudio()
 {
     document.getElementById("auSrc").setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
+    document.getElementById("au").play();
 }
