@@ -17,3 +17,10 @@ function Countdown()
     secs %= 60;
     document.getElementById("giay").innerText = secs < 10 ? ("0" + secs) : secs;
 }
+
+var audioCount = 11; //Chỉnh số lượng bài hát trong danh sách
+
+function PlayAudio()
+{
+    document.getElementById("auSrc").setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
+}

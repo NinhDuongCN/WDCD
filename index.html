@@ -25,8 +25,13 @@
             </ul>
         </div>
     </div>
+    <audio id="au" hidden="true" autoplay="true" onpause="PlayAudio()">
+        <source id="auSrc" type="audio/mpeg" src="" />
+    </audio>
 </body>
 <script language="javascript">
+    
+    PlayAudio();
     Countdown();
     setInterval(Countdown, 1000);
 </script>
