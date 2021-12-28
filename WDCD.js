@@ -22,6 +22,7 @@ var audioCount = 11; //Chỉnh số lượng bài hát trong danh sách
 
 function PlayAudio()
 {
-    document.getElementById("auSrc").setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
-    document.getElementById("au").play();
+    var aud = document.getElementById("au");
+    aud.setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
+    aud.play();
 }
