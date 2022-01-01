@@ -32,8 +32,9 @@ function PlayAudio()
 
 function SetBtnPause()
 {
-    document.getElementById("btnPlayPause").setAttribute("src", imgPause);
+    //document.getElementById("btnPlayPause").setAttribute("src", imgPause);
     isPlaying = true;
+    document.getElementById("btnPlayPause").hidden = true;
 }
 
 function SetBtnPlay()
