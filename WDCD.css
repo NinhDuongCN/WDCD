@@ -72,20 +72,9 @@ body{
     /*width: 40%;*/
 }
 
-/* #btnDiv{
-    width: 64px;
-    height: 64px;
-    margin-left: calc(100% - 84px);
-    margin-top: calc(100% - 84px);
-    position: fixed;
-    z-index: 999;
-    border-radius: 128px;
-    border: solid whitesmoke 1px;
-} */
-
 #btnPlayPause{
-    width: 64px;
-    height: auto;
+    height: 8vh;
+    width: auto;
     right: 20px;
     bottom: 20px;
     position: fixed;
