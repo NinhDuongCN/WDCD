@@ -25,13 +25,16 @@
             </ul>
         </div>
     </div>
-    <audio id="au" hidden="true" autoplay="true" onended="PlayAudio()" src="">
+
+    <img id="btnPlayPause" src="./image/btn_play.svg" onclick="BtnClicked()" tag="pause" />
+
+    <audio id="au" hidden="true" onended="PlayAudio()" onplay="SetBtnPause()" onpause="SetBtnPlay()" src="#">
         
     </audio>
 </body>
 <script language="javascript">
-    PlayAudio();
     Countdown();
     setInterval(Countdown, 1000);
+    PlayAudio();
 </script>
 </html>

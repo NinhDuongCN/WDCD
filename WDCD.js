@@ -19,10 +19,41 @@ function Countdown()
 }
 
 var audioCount = 11; //Chỉnh số lượng bài hát trong danh sách
+var imgPlay = "./image/btn_play.svg";
+var imgPause = "./image/btn_pause.svg";
+var isPlaying = false;
 
 function PlayAudio()
 {
     var aud = document.getElementById("au");
     aud.setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
     aud.play();
+}
+
+function SetBtnPause()
+{
+    document.getElementById("btnPlayPause").setAttribute("src", imgPause);
+    isPlaying = true;
+}
+
+function SetBtnPlay()
+{
+    document.getElementById("btnPlayPause").setAttribute("src", imgPlay);
+    isPlaying = false;
+}
+
+function BtnClicked()
+{
+    var aud = document.getElementById("au");
+    if(isPlaying){
+        aud.pause();
+    }
+    else{
+        try{
+            aud.play();
+        }
+        catch{
+            PlayAudio();
+        }
+    }
 }
