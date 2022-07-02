@@ -33,11 +33,12 @@ body{
 
 #div2{
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 #countdown{
     margin: auto auto;
+    margin-bottom: 8vh;
     list-style: none;
     display: inline-flex;
 }
