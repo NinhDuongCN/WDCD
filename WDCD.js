@@ -18,7 +18,7 @@ function Countdown()
     document.getElementById("giay").innerText = secs < 10 ? ("0" + secs) : secs;
 }
 
-var audioCount = 22; //Chỉnh số lượng bài hát trong danh sách
+var audioCount = 41; //Chỉnh số lượng bài hát trong danh sách
 var imgPlay = "./image/btn_play.svg";
 var imgPause = "./image/btn_pause.svg";
 var isPlaying = false;
