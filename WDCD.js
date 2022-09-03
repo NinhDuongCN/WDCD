@@ -18,7 +18,17 @@ function Countdown()
     document.getElementById("giay").innerText = secs < 10 ? ("0" + secs) : secs;
 }
 
-var audioCount = 41; //Chỉnh số lượng bài hát trong danh sách
+var backgroundCount = 35; //số lượng ảnh nền
+
+function ChangeBackground()
+{
+    //Tạo một vòng lặp với thời gian lặp ngẫu nhiên
+    //Tại mỗi bước lặp thì chọn ngẫu nhiên một ảnh để đổi làm nền
+    document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + Math.floor(Math.random() * backgroundCount) + ".jpg')";        
+    setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
+}
+
+var audioCount = 42; //Chỉnh số lượng bài hát trong danh sách
 var imgPlay = "./image/btn_play.svg";
 var imgPause = "./image/btn_pause.svg";
 var isPlaying = false;
