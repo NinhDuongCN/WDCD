@@ -19,13 +19,14 @@ function Countdown()
 }
 
 var backgroundCount = 35; //số lượng ảnh nền
+var id_changeBackground;
 
 function ChangeBackground()
 {
     //Tạo một vòng lặp với thời gian lặp ngẫu nhiên
     //Tại mỗi bước lặp thì chọn ngẫu nhiên một ảnh để đổi làm nền
     document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + Math.floor(Math.random() * backgroundCount) + ".jpg')";        
-    setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
+    id_changeBackground = setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
 }
 
 var audioCount = 42; //Chỉnh số lượng bài hát trong danh sách
@@ -67,4 +68,10 @@ function BtnClicked()
             PlayAudio();
         }
     }
+}
+
+function div1_Clicked()
+{
+    clearTimeout(id_changeBackground);
+    ChangeBackground();
 }
