@@ -1,3 +1,11 @@
+function PageLoading()
+{
+    Countdown();
+    setInterval(Countdown, 1000);
+    PlayAudio();
+    ChangeBackground();
+}
+
 let WD = new Date(2026, 01, 22, 11, 11, 11, 111);
 var WDsec = WD.getTime();
 
@@ -18,27 +26,63 @@ function Countdown()
     document.getElementById("giay").innerText = secs < 10 ? ("0" + secs) : secs;
 }
 
-var backgroundCount = 35; //số lượng ảnh nền
+var backgroundCount = 35; //số lượng ảnh nền. NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstAnh Ở HÀM CreateRandomLstAnh
 var id_changeBackground;
+var lstAnh = new Array();
+
+function CreateRandomLstAnh()
+{
+    var tmplstAnh = [ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+                      20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
+
+    for(var i = 0; i < backgroundCount; i++)
+    {
+        lstAnh.push(tmplstAnh.splice(Math.floor(Math.random() * tmplstAnh.length), 1));
+    }
+}
 
 function ChangeBackground()
 {
     //Tạo một vòng lặp với thời gian lặp ngẫu nhiên
     //Tại mỗi bước lặp thì chọn ngẫu nhiên một ảnh để đổi làm nền
-    document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + Math.floor(Math.random() * backgroundCount) + ".jpg')";        
+    //document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + Math.floor(Math.random() * backgroundCount) + ".jpg')";        
+    document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + lstAnh.shift()+ ".jpg')";        
     id_changeBackground = setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
+    if(lstAnh.length === 0)
+    {
+        CreateRandomLstAnh();
+    }
 }
 
-var audioCount = 42; //Chỉnh số lượng bài hát trong danh sách
+var audioCount = 42; //Số lượng bài hát trong danh sách; NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstNhac Ở HÀM CreateRandomLstNhac
 var imgPlay = "./image/btn_play.svg";
 var imgPause = "./image/btn_pause.svg";
 var isPlaying = false;
+var lstNhac = new Array();
+
+function CreateRandomLstNhac()
+{
+    var tmplstNhac = [ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+                      20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+                      40, 41];
+
+    //lstNhac = new Array();
+    for(var i = 0; i < audioCount; i++)
+    {
+        lstNhac.push(tmplstNhac.splice(Math.floor(Math.random() * tmplstNhac.length), 1));
+    }
+}
 
 function PlayAudio()
 {
     var aud = document.getElementById("au");
-    aud.setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
+    //aud.setAttribute("src", "./audio/" + Math.floor(Math.random()*audioCount) + ".mp3");
+    aud.setAttribute("src", "./audio/" + lstNhac.shift() + ".mp3");
     aud.play();
+    if(lstNhac.length === 0)
+    {
+        CreateRandomLstNhac();
+    }
 }
 
 function SetBtnPause()
