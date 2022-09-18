@@ -47,11 +47,12 @@ function ChangeBackground()
     //Tại mỗi bước lặp thì chọn ngẫu nhiên một ảnh để đổi làm nền
     //document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + Math.floor(Math.random() * backgroundCount) + ".jpg')";        
     document.getElementById("div1").style.backgroundImage = "url('./image/bgrs/" + lstAnh.shift()+ ".jpg')";        
-    id_changeBackground = setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
     if(lstAnh.length === 0)
     {
+        clearTimeout(id_changeBackground);
         CreateRandomLstAnh();
     }
+    id_changeBackground = setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
 }
 
 var audioCount = 42; //Số lượng bài hát trong danh sách; NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstNhac Ở HÀM CreateRandomLstNhac
