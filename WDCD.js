@@ -6,11 +6,13 @@ function PageLoading()
     ChangeBackground();
 }
 
-let WD = new Date(2026, 01, 22, 11, 11, 11, 111);
-var WDsec = WD.getTime();
+//let WD = new Date(2026, 01, 22, 11, 11, 11, 111);
+let WD = new Date(2024, 01, 20, 11, 11, 11, 111);
+//var WDsec = WD.getTime();
 
 function Countdown()
 {
+    var WDsec = (new Date(2026, 01, 22, 11, 11, 11, 111)).getTime();
     var td = new Date();
     var tdSec = td.getTime();
     var secs = Math.floor((-tdSec + WDsec) / 1000);
