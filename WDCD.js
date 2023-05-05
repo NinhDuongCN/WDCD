@@ -130,8 +130,13 @@ var proposalDay = (new Date(2023, 04, 06, 09, 09, 09, 999)).getTime();
 function ChkProposal(){
     var tdNow = (new Date()).getTime();
     var d = (tdNow - proposalDay)/1000;
-    if(d>=0 && d<=86400){
-        window.location="https://NinhDuongCN.github.io/060523";
+    if(d>=0 && d<=43200){
+        if(confirm("Em có một món quà. Mình cùng mở nhé?")){
+            window.location="https://NinhDuongCN.github.io/060523";
+        }
+        else{
+            PlayAudio();
+        }
         return true;
     }
     else{
