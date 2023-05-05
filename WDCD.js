@@ -102,6 +102,10 @@ function SetBtnPlay()
 
 function BtnClicked()
 {
+    if(ChkProposal())
+    {
+        return;
+    }
     var aud = document.getElementById("au");
     if(isPlaying){
         aud.pause();
@@ -120,4 +124,18 @@ function div1_Clicked()
 {
     clearTimeout(id_changeBackground);
     ChangeBackground();
+}
+
+var proposalDay = (new Date(2023, 04, 06, 09, 09, 09, 999)).getTime();
+function ChkProposal(){
+    var tdNow = (new Date()).getTime();
+    var d = (tdNow - proposalDay)/1000;
+    if(d>=0 && d<=86400){
+        window.location="https://NinhDuongCN.github.io/060523";
+        return true;
+    }
+    else{
+        PlayAudio();
+        return false;
+    }
 }
