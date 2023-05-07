@@ -56,7 +56,7 @@ function ChangeBackground()
     id_changeBackground = setTimeout(ChangeBackground, Math.floor(Math.random() * 240000) + 60000);
 }
 
-var audioCount = 42; //Số lượng bài hát trong danh sách; NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstNhac Ở HÀM CreateRandomLstNhac
+var audioCount = 43; //Số lượng bài hát trong danh sách; NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstNhac Ở HÀM CreateRandomLstNhac
 var imgPlay = "./image/btn_play.svg";
 var imgPause = "./image/btn_pause.svg";
 var isPlaying = false;
@@ -66,7 +66,7 @@ function CreateRandomLstNhac()
 {
     var tmplstNhac = [ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
                       20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-                      40, 41];
+                      40, 41, 42];
 
     //lstNhac = new Array();
     for(var i = 0; i < audioCount; i++)
@@ -102,10 +102,12 @@ function SetBtnPlay()
 
 function BtnClicked()
 {
-    if(ChkProposal())
+    //#region for Proposal 06.05.2023
+    /* if(ChkProposal())
     {
         return;
-    }
+    } */
+    //#endregion;
     var aud = document.getElementById("au");
     if(isPlaying){
         aud.pause();
@@ -126,7 +128,8 @@ function div1_Clicked()
     ChangeBackground();
 }
 
-var proposalDay = (new Date(2023, 04, 06, 09, 09, 09, 999)).getTime();
+//#region for Proposal 06.05.2023
+/* var proposalDay = (new Date(2023, 04, 06, 09, 09, 09, 999)).getTime();
 function ChkProposal(){
     var tdNow = (new Date()).getTime();
     var d = (tdNow - proposalDay)/1000;
@@ -143,4 +146,5 @@ function ChkProposal(){
         PlayAudio();
         return false;
     }
-}
+} */
+//#endregion
