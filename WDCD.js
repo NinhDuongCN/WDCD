@@ -27,7 +27,7 @@ function Countdown()
     document.getElementById("giay").innerText = secs < 10 ? ("0" + secs) : secs;
 }
 
-var backgroundCount = 34; //số lượng ảnh nền. NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstAnh Ở HÀM CreateRandomLstAnh
+var backgroundCount = 35; //số lượng ảnh nền. NHỚ THÊM GIÁ TRỊ TRONG MẢNG tmplstAnh Ở HÀM CreateRandomLstAnh
 var id_changeBackground;
 var lstAnh = new Array();
 
