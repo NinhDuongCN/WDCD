@@ -8,7 +8,7 @@ function PageLoading()
 
 //let WD = new Date(2026, 01, 22, 11, 11, 11, 111);
 //var WDsec = WD.getTime();
-var WDsec = (new Date(2024, 1, 20, 11, 11, 11, 111)).getTime();
+var WDsec = (new Date(2024, 2, 20, 11, 11, 11, 111)).getTime(); //20/3/2024
 
 function Countdown()
 {
