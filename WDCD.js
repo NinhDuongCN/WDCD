@@ -9,12 +9,28 @@ function PageLoading()
 //let WD = new Date(2026, 01, 22, 11, 11, 11, 111);
 //var WDsec = WD.getTime();
 var WDsec = (new Date(2024, 2, 20, 11, 11, 11, 111)).getTime(); //20/3/2024
+var firstConfirm = true;
 
 function Countdown()
 {
     var td = new Date();
     var tdSec = td.getTime();
     var secs = Math.floor((-tdSec + WDsec) / 1000);
+    if(secs < 0){
+        document.getElementById("ngay").innerText = "00";
+        document.getElementById("gio").innerText = "00";
+        document.getElementById("phut").innerText = "00";
+        document.getElementById("giay").innerText = "00";
+        if(firstConfirm){
+            firstConfirm = false;
+            setTimeout(() => {
+                if(confirm("Chuyển đến trang mới?")){
+                    window.location = "https://www.NguyenChamMemories.id.vn/WD";
+                }
+            }, 5000);
+        }
+        return;
+    }
     var dhm = Math.floor(secs / 86400);
     secs %= 86400;
     document.getElementById("ngay").innerText = dhm;
